@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	try {
+		throw new Error("사용자에러!!!!")		// 강제적으로  에러발생!!!
+		let array = new Array(99999999999)
+		let array = new Array(10)
+	} catch(exception) {
+		alert('예외발생!!!!')
+		console.log(exception.message)
+		
+		for(var i in exception) {
+			document.write(i + ' : ' + exception[i] + '<br>')
+		}
+	} finally {
+		console.log('finally 구문진입...')
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		DOM level 2
+		표준이벤트모델 - addEventListener(이벤트속성, handler, cupaturing사용여부 : true(capturing), false(bubbling))
+	*/
+	window.onload = function() {
+		let btn = document.getElementById('btn')
+		btn.addEventListener('click', function() {
+			alert('button click...')
+		}, true)
+		
+		let span = document.querySelector('span')
+		span.addEventListener('click', function() {
+			alert('span click...')
+		})
+	}
+</script>
+</head>
+<body>
+	<button id="btn"><span>CLICK</span></button>
+</body>
+</html>
+
+
+
+
+

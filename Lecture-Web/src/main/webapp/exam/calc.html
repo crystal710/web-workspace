@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#editor {
+		text-align: right
+	}
+	
+	
+</style>
+<script type="text/javascript">
+		function clickBtn(data){
+			console.log(data)
+			
+			let editor = document.getElementById("editor")
+			
+			if(data != '='){
+				editor.value +=data
+			}else {
+				editor.value = eval(editor.value)
+			}
+		}
+		
+		function reset(data){
+			let editor = document.getElementById("editor")
+			
+			if(data = 'Clear'){
+				editor.value = ''
+			}
+		}
+</script>
+</head>
+<body>
+			<input type="text" id = "editor" size = "20"><br>
+			
+			<button onclick="clickBtn('7')">7</button>
+			<button onclick="clickBtn('8')">8</button>
+			<button onclick="clickBtn('9')">9</button>
+			<button onclick="clickBtn('/')">/</button><br>
+	
+			<button onclick="clickBtn('4')">4</button>
+			<button onclick="clickBtn('5')">5</button>
+			<button onclick="clickBtn('6')">6</button>
+			<button onclick="clickBtn('*')">*</button> <br>
+			
+		 	<button onclick="clickBtn('1')">1</button>
+			<button onclick="clickBtn('2')">2</button>
+			<button onclick="clickBtn('3')">3</button>
+			<button onclick="clickBtn('-')">-</button><br>
+			
+			<button onclick="clickBtn('0')">0</button>
+			<button onclick="clickBtn('.')">.</button>
+			<button onclick="clickBtn('*')">*</button>
+			<button onclick="clickBtn('%')">%</button><br>
+			
+			<button onclick="clickBtn('=')">=</button>
+			<button onclick="reset('Clear')">Clear</button><br>
+
+</body>
+</html>

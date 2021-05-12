@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	try {
+		let num = Number(prompt('짝수를 입력하세요'))
+		if(!num || num % 2 != 0)
+			throw new Error('짝수만 입력하세요!!!!')
+		document.write('짝수 : ' + num + '<br>')
+	} catch(e) {
+		alert(e.message)
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

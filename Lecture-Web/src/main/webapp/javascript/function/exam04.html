@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function returnFunc(name) {
+		var msg = '반갑습니다 ' + name + '님!!!';
+		return function() {
+			alert(msg + " : " + name);
+		};
+	}
+	
+//	returnFunc();
+//	alert(msg);	// 오류발생
+	
+//	var f = returnFunc('홍길동');
+//	f();
+
+	returnFunc('홍길동')();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

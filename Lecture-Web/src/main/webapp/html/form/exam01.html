@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form tag 연습</title>
+</head>
+<body>
+
+<!-- 
+	<form>
+		<input type="" >
+			   type			text(한줄 입력)
+			   				password(암호처리)
+			   				checkbox(다중선택)
+			   				radio(단일선택)
+			   				button(사용자정의 이벤트)
+			   				file(첨부파일)
+			   				reset(초기화)
+			   				hidden(입력받지 않은 데이터 전송)
+			   				submit(입력받은 전체 데이터 전송)
+		<textarea>			여러줄 입력
+	</form>
+ -->
+ 
+ 	<form action="http://www.naver.com">
+ 		<label>아이디 : <input type ="text" size="30"><br></label>
+ 		<label for="pwd">패스워드 : </label><input type="password" id="pwd"><br><br>
+ 		
+ 		<fieldset>
+ 		<strong>희망연봉</strong><br>
+ 		<input type="radio" name="salary">2500~2800사이<br>
+ 		<input type="radio" name="salary">2800~3100사이<br>
+ 		<input type="radio" name="salary">3100~3400사이<br>
+ 		<input type="radio" name="salary">3400~4000사이<br>
+ 		<input type="radio" name="salary">4000이상<br>
+ 		</fieldset><br>
+ 		
+		<fieldset>
+ 		<!-- <strong>사용언어(중복선택 가능)</strong><br> -->
+ 		<legend>사용언어(중복선택 가능)</legend>
+ 		<input type="checkbox" name="lang">JAVA<br>
+ 		<input type="checkbox" name="lang">C<br>
+ 		<input type="checkbox" name="lang">PYTHON<br>
+ 		<input type="checkbox" name="lang">R<br>
+ 		<input type="checkbox" name="lang">SERVET/JSP<br>
+ 		<input type="checkbox" name="lang">SPRING<br>
+ 		</fieldset><br>
+ 		
+ 		<strong>취미(중복선택 가능)</strong><br>
+ 		<input type="checkbox" name="hobby">등산<br>
+ 		<input type="checkbox" name="hobby">코딩<br>
+ 		<input type="checkbox" name="hobby">디버깅<br><br>
+ 		
+ 		<strong>자기소개</strong><br>
+ 		<textarea rows="7" cols="50"></textarea><br><br>
+ 		
+ 		<strong>첨부파일</strong><br>
+ 		<input type="file" size="80"><br><br>
+ 		
+ 		<button type="button">클릭해봐</button>
+ 		<button type="reset">초기화</button>
+ 		<button type="submit">전송</button>
+ 		
+ 		<!-- <input type="button" value="button"><br><br>
+ 		
+ 		
+ 		<input type="reset" value="초기화"><br><br>
+ 		
+ 		
+ 		<br>
+ 		<input type="submit" value ="전송"> -->
+ 	</form>
+</body>
+</html>

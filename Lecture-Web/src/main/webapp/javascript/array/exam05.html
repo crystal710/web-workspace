@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+//	var books = ['신데렐라', '콩쥐팥쥐', '피터팬', '백설공주']
+	var books = new Array();
+	
+	books.push('신데렐라')
+	books.push('콩쥐팥쥐')
+	books.push('피터팬')
+	books.push('백설공주')
+	
+	for(let element of books) {
+		document.write(element + '&nbsp;&nbsp;&nbsp;')
+	}
+	document.write('<hr>')
+	
+	books.sort() //사전순으로 정렬
+	
+	for(let element of books) {
+		document.write(element + '&nbsp;&nbsp;&nbsp;')
+	}
+	document.write('<hr>')
+	
+	var nums = [12, 5, 357, 85, 56, 8, 21]
+	document.write(nums + '<hr>')
+	
+	nums.sort()
+	document.write(nums + '<hr>')
+	
+	nums.sort(function(left, right) { //callback 함수
+		return left - right;
+	})
+	document.write(nums + '<hr>')
+	
+	nums.sort(function(left, right) {
+		return right - left
+	})
+	document.write(nums + '<hr>')
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

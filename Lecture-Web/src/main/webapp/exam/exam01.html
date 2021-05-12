@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#editor {
+		text-align: right
+	}
+</style>
+<script>
+
+	function clickButton(data) {
+		console.log(data)
+		
+		let editor = document.getElementById("editor")
+		
+		if(data != '=') {
+			editor.value += data
+			
+		} else {
+			editor.value = eval(editor.value)
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<input type="text" id="editor" size="20"><br>
+
+	<button onclick="clickButton('1')"> 1 </button>
+	<button onclick="clickButton('2')"> 2 </button>
+	<button onclick="clickButton('3')"> 3 </button>
+	<button onclick="clickButton('4')"> 4 </button>
+	<button onclick="clickButton('5')"> 5 </button>
+	<button onclick="clickButton('+')"> + </button>
+	<button onclick="clickButton('-')"> - </button>
+	<button onclick="clickButton('*')"> * </button> 
+	<button onclick="clickButton('=')"> = </button> 
+
+</body>
+</html>
+
+
+
+
+
+
+

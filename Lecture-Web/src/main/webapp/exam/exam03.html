@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#editor {
+		text-align: right
+	}
+</style>
+<script>
+
+	function clickButton(obj) {
+		console.log(obj)
+		
+		let editor = document.getElementById("editor")
+		
+		if(obj.value != '=') {
+			editor.value += obj.value
+			
+		} else {
+			editor.value = eval(editor.value)
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<input type="text" id="editor" size="20"><br>
+
+	<input type="button" value="1" onclick="clickButton(this)">
+	<input type="button" value="2" onclick="clickButton(this)">
+	<input type="button" value="3" onclick="clickButton(this)">
+	<input type="button" value="4" onclick="clickButton(this)">
+	<input type="button" value="5" onclick="clickButton(this)">
+	<input type="button" value="+" onclick="clickButton(this)">
+	<input type="button" value="-" onclick="clickButton(this)">
+	<input type="button" value="*" onclick="clickButton(this)"> 
+	<input type="button" value="=" onclick="clickButton(this)"> 
+
+</body>
+</html>
+
+
+
+
+
+
+

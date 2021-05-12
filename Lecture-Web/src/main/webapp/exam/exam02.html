@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#editor {
+		text-align: right
+	}
+</style>
+<script>
+
+	window.onload = function() {
+		let btns = document.querySelectorAll('input[type="button"]')
+		for(let btn of btns) {
+			btn.onclick = function() {
+				//console.log(this)
+				
+				let editor = document.getElementById("editor")
+				
+				if(this.value != '=') {
+					editor.value += this.value
+					
+				} else {
+					editor.value = eval(editor.value)
+				}
+			}
+		}
+	}
+
+	
+
+</script>
+</head>
+<body>
+	<input type="text" id="editor" size="20"><br>
+
+	<input type="button" value="1" >
+	<input type="button" value="2" >
+	<input type="button" value="3" >
+	<input type="button" value="4" >
+	<input type="button" value="5" >
+	<input type="button" value="+" >
+	<input type="button" value="-" >
+	<input type="button" value="*" > 
+	<input type="button" value="=" > 
+
+</body>
+</html>
+
+
+
+
+
+
+

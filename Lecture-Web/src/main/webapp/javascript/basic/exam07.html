@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = prompt('정수를 입력하세요'); //prompt -> Scanner와 같은 기능 /return String형
+	num = Number(num);
+	
+	var msg = num % 2 == 0 ? "짝수" : "홀수";
+	alert(msg);
+	
+	switch(num % 2) {
+	case 0 : 
+		alert(num + '은 짝수입니다');
+		break;
+	case 1 : 
+		alert(num + '은 홀수입니다');
+		break;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
