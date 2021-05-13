@@ -5,14 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- <link rel="stylesheet" href="/Mission-Web/resources/css/layout.css"> -->
-<%-- <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/layout.css"> --%>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/layout.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/board.css">
-<script src="${pageContext.request.contextPath }/resources/js/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/layout.css">
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/board.css">
+<script src="${ pageContext.request.contextPath }/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	function checkLogin() {
-		alert('!!!!!!')
+		
+		let f = document.loginForm
+		if(f.id.value == '') {
+			alert('아이디를 입력해주세요')
+			f.id.focus()
+			return false
+		}
+		
+		if(f.password.value == '') {
+			alert('비밀번호를 입력해주세요')
+			f.password.focus()
+			return false
+		}
+		
 		return true
 	}
 </script>
@@ -23,24 +34,24 @@
 	</header>
 	<section>
 		<div align="center">
-		<hr>
-			<h1>로그인</h1>
+			<hr>
+				<h1>로그인</h1>
+			<hr>
 			<br>
-			<form name = "loginForm" action="loginProcess.jsp" method ="post" onsubmit="return checkLogin()"> 
+			<form name="loginForm" action="loginProcess.jsp" method="post" onsubmit="return checkLogin()">
 				<table style="width: 60%">
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" name="id"></td>	
+						<td><input type="text" name="id"></td>
 					</tr>
 					<tr>
-						<th>비밀번호</th>
+						<th>패스워드</th>
 						<td><input type="password" name="password"></td>
 					</tr>
 				</table>
 				<br>
-				<input type= "submit" value = "로그인">
+				<button type="submit">로그인</button>
 			</form>
-		<hr>
 		</div>
 	</section>
 	<footer>
@@ -48,3 +59,18 @@
 	</footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

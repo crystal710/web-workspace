@@ -7,6 +7,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	//http://localhost:9999/Mission-Web/jsp/board/detail.jsp?no=5
 	
@@ -14,10 +15,14 @@
 	int no = Integer.parseInt(request.getParameter("no"));
 
 	//t_board 테이블에서 추출한 게시물 조회	
-	BoardDAO board = new BoardDAO();
+	BoardDAO dao = new BoardDAO();
+	
+	//조회수 증가
+	dao.incrementViewCnt(no);
+	/* BoardVO board = dao.selectByNo(no); */
 	
 	//공유영역 등록
-	pageContext.setAttribute("board", board.selectByNo(no));
+	pageContext.setAttribute("board", dao.selectByNo(no));
 	
 %>
 <!DOCTYPE html>
@@ -25,6 +30,9 @@
 <head>
 <meta charset="UTF-8">
 <title>상세내용</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/layout.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/board.css">
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	function goList() {
 		location.href = "list.jsp"		
@@ -36,9 +44,6 @@
 		
 	}
 </script>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/layout.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/board.css">
-<script src="${pageContext.request.contextPath }/resources/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<header>

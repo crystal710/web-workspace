@@ -16,38 +16,37 @@
   	2. 조회된 데이터를 tr, td에 출력
    --%>
  <%
- 	Connection conn = new ConnectionFactory().getConnection();
- 	StringBuilder sql = new StringBuilder();
- 	sql.append("select no, title, writer, to_char(reg_date,'yyyy-mm-dd') as reg_date ");
- 	sql.append("from t_board ");
- 	sql.append("order by no desc ");
- 	
- 	PreparedStatement pstmt = conn.prepareStatement(sql.toString());
- 	
- 	ResultSet rs = pstmt.executeQuery();
- 	
- 	List<BoardVO> boardList = new ArrayList<>();
- 	
- 	while(rs.next()){
- 		int no = rs.getInt("no");
- 		String title = rs.getString("title");
- 		String writer = rs.getString("writer");
- 		String regDate = rs.getString("reg_date");
- 		
- 		BoardVO board = new BoardVO();
- 		board.setNo(no);
- 		board.setTitle(title);
- 		board.setWriter(writer);
- 		board.setRegDate(regDate);
- 		
- 		boardList.add(board);
- 	}
- 	
-	JDBCClose.close(conn,pstmt);
- 	
- 	//공유영역에 등록
- 	pageContext.setAttribute("boardList", boardList);
- 	
+ Connection conn = new ConnectionFactory().getConnection();
+   	StringBuilder sql = new StringBuilder();
+   	sql.append("select no, title, writer, to_char(reg_date,'yyyy-mm-dd') as reg_date ");
+   	sql.append("from t_board ");
+   	sql.append("order by no desc ");
+   	
+   	PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+   	
+   	ResultSet rs = pstmt.executeQuery();
+   	
+   	List<BoardVO> boardList = new ArrayList<>();
+   	
+   	while(rs.next()){
+   		int no = rs.getInt("no");
+   		String title = rs.getString("title");
+   		String writer = rs.getString("writer");
+   		String regDate = rs.getString("reg_date");
+   		
+   		BoardVO board = new BoardVO();
+   		board.setNo(no);
+   		board.setTitle(title);
+   		board.setWriter(writer);
+   		board.setRegDate(regDate);
+   		
+   		boardList.add(board);
+   	}
+   	
+  	JDBCClose.close(conn,pstmt);
+   	
+   	//공유영역에 등록
+   	pageContext.setAttribute("boardList", boardList);
  %>
 <!DOCTYPE html>
 <html>

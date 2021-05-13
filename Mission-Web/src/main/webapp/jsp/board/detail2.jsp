@@ -7,7 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	//http://localhost:9999/Mission-Web/jsp/board/detail.jsp?no=5
+//http://localhost:9999/Mission-Web/jsp/board/detail.jsp?no=5
 	
 	//조회할 게시물번호 추출
 	int no = Integer.parseInt(request.getParameter("no"));
@@ -41,7 +41,6 @@
 	
 	//공유영역 등록
 	pageContext.setAttribute("board", board);
-	
 %>
 <!DOCTYPE html>
 <html>

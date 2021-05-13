@@ -20,6 +20,7 @@
 			<hr>
 			<br>
 			<form action="write.jsp" method ="post">
+				<input type="hidden" name ="writer" value="${userVO.id }"> <!-- 입력받지않은 임의 정보도 넣고싶음 -->
 				<table style="width: 100%">
 					<tr>
 						<th width="25%">제목</th>
@@ -27,7 +28,7 @@
 					</tr>
 					<tr>
 						<th width="25%">작성자</th>
-						<td><input type="text" name="writer" size="100" required></td>
+						<td><input type="text" name="writer" size="100" required value = "${ userVO.id }" readonly></td>
 					</tr>
 					<tr>
 						<th width="25%">내용</th>

@@ -43,4 +43,13 @@ update t_member
     
 select id, name, password, (tel1 ||'-'|| tel2 ||'-'|| tel3) as phone_number , to_char(reg_date,'yyyy-mm-dd') as reg_date
   from t_member;
+  
+  insert into t_member(id, name, password, type)
+    values('admin','관리자','admin','S');
+insert into t_member(id,name,password)
+    values('user','홍길동','user');
+    
+    
+select * from t_member;
+    commit;
 

@@ -6,9 +6,9 @@
 	int no = Integer.parseInt(request.getParameter("no"));
 
 //t_board 테이블에서 추출한 게시물 삭제
-	BoardDAO board = new BoardDAO();
+	BoardDAO dao = new BoardDAO();
 	
-	board.deleteBoard(no);
+	dao.deleteBoard(no);
 %>
 <script>
 	alert('삭제를 완료하였습니다.')
